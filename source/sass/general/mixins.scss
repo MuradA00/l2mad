@@ -1,0 +1,118 @@
+@use 'sass:math';
+
+@mixin dfc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin dfcs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin pseudo {
+  position: absolute;
+  content: '';
+}
+
+@mixin bg_position {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+@mixin max-w($media) {
+  @media only screen and (max-width: $media) {
+    @content;
+  }
+}
+
+@mixin min-w($media) {
+  @media only screen and (min-width: $media) {
+    @content;
+  }
+}
+
+@function rem($pixel) {
+  @return math.div($pixel, 16) + rem;
+}
+
+@mixin center() {
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+@mixin fl($direction, $align, $gap) {
+  display: flex;
+
+  grid-gap: $gap;
+  @if $align {
+    align-items: $align;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+@mixin tr($transition) {
+  @if $transition == 100 {
+    transition: 100ms ease;
+  }
+  @if $transition == 200 {
+    transition: 200ms ease;
+  }
+  @if $transition == 300 {
+    transition: 300ms ease;
+  }
+  @if $transition == 400 {
+    transition: 400ms ease;
+  }
+  @if $transition == 500 {
+    transition: 500ms ease;
+  }
+}
+
+@mixin m($direction, $value) {
+  @if $direction == t {
+    margin-top: $value;
+  }
+  @if $direction == b {
+    margin-bottom: $value;
+  }
+  @if $direction == l {
+    margin-left: $value;
+  }
+  @if $direction == r {
+    margin-right: $value;
+  }
+}
+
+@mixin hide-text($line) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
+
+@mixin z-1 {
+  z-index: 1;
+}
+@mixin z-2 {
+  z-index: 2;
+}
+@mixin z-3 {
+  z-index: 3;
+}
+@mixin z-4 {
+  z-index: 4;
+}
+@mixin z-5 {
+  z-index: 5;
+}

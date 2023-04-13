@@ -1,0 +1,50 @@
+.promo {
+  min-height: var(--promo-section-height);
+
+  background-size: cover;
+  background-position: bottom;
+
+  position: relative;
+
+  &::before {
+    @include pseudo;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background-color: rgba(var(--b-clr),.4);
+  }
+  &::after {
+    @include pseudo;
+
+    width: 100%;
+    height: var(--promo-shadow-height);
+
+    background-image: var(--promo-shadow-bg);
+
+    top: 0;
+    left: 0;
+  }
+  &__body {
+    padding-top: var(--promo-padding-y);
+
+    position: relative;
+    @include z-1;
+  }
+  &__title {
+    @extend
+    .main-title,
+    .main-title--medium;
+
+    @include m(b, 2rem);
+  }
+  &__play {
+    @extend
+    .button;
+
+    margin: 0 auto;
+  }
+}
