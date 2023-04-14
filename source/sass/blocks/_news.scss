@@ -29,12 +29,11 @@
         .news__card-bg {
           img,
           picture {
-            transform: scale(1.05) perspective(1px);
+            transform: scale(1.025) perspective(1px);
           }
         }
       }
     }
-
     &::before {
       @include pseudo;
 
@@ -80,6 +79,8 @@
     font-size: 1.125rem;
 
     @include m(b, 8px);
+
+    color: rgba(var(--w-clr), 0.8);
   }
   &__card-heading {
     font-size: clamp(1.5rem, 2vw, 2rem);
@@ -94,7 +95,7 @@
   }
   &__card-info {
     p {
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 1.25vw, 1.25rem);
       font-weight: 400;
       line-height: 120%;
     }
@@ -144,11 +145,6 @@
     }
     &__card-heading {
       --card-heading-width: 450px;
-    }
-    &__card-info {
-      p {
-        font-size: 1rem;
-      }
     }
   }
 }

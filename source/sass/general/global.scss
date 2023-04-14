@@ -12,6 +12,8 @@ body {
   min-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
+
+  min-height: 100vh;
 }
 
 html {
@@ -23,6 +25,14 @@ html {
   line-height: normal;
   min-height: 100vh;
   min-height: -webkit-fill-available;
+}
+
+main {
+  flex: 1;
+
+  & > *:last-child {
+    padding-bottom: calc(var(--footer-height) * 1.5);
+  }
 }
 
 *,

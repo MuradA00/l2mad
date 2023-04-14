@@ -1,0 +1,80 @@
+.footer {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  @include z-5;
+
+  width: 100%;
+
+  min-height: var(--footer-height);
+
+  display: grid;
+  place-items: center;
+
+  border-top: 1px solid rgba(var(--w-clr),.1);
+  &__body {
+    @include fl(row,center, 10px);
+    justify-content: space-between;
+
+    font-size: var(--footer-fz);
+
+    color: rgba(var(--w-clr), .8);
+  }
+  &__info {
+    @include fl(row, center, var(--footer-info-gutter));
+  }
+  &__links {
+    @include fl(row, center, 2rem);
+  }
+  &__links-item {
+    @include tr(200);
+
+    @include hover {
+      &:hover {
+        color: rgba(var(--w-clr),1);
+      }
+    }
+  }
+  &__logo {
+    @include fl(row, center, 0.9375rem);
+
+    @include hover {
+      &:hover {
+        svg {
+          fill: rgba(var(--w-clr), .7);
+        }
+      }
+    }
+  }
+  &__logo-icon {
+    height: 27px;
+
+    & > svg {
+      fill: rgba(var(--w-clr),1);
+
+      @include tr(200);
+    }
+  }
+}
+
+@include max-w($tab-q) {
+  :root {
+    --footer-height: 9.625rem;
+  }
+  .footer {
+    &__body {
+      flex-direction: column;
+
+      grid-gap: var(--footer-media-gutter);
+
+      text-align: center;
+    }
+    &__info {
+      grid-gap: var(--footer-media-gutter);
+
+      flex-direction: column;
+    }
+  }
+}
