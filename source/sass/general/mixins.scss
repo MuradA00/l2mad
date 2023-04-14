@@ -48,6 +48,7 @@
 
 @mixin fl($direction, $align, $gap) {
   display: flex;
+  flex-direction: $direction;
 
   grid-gap: $gap;
   @if $align {

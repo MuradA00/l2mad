@@ -53,7 +53,7 @@
     margin: 0 auto clamp(2rem, 3rem, 3vw);
 
     p {
-      font-size: clamp(0.9375rem, 1.25vw, 1.25rem);
+      font-size: clamp(0.875rem, 1.25vw, 1.25rem);
       line-height: 150%;
 
       font-family: var(--ff_i);
@@ -80,13 +80,25 @@
   }
 }
 
+@include max-w($media-m) {
+  :root {
+    --main-content-width: 400px;
+  }
+  .main {
+    &__content {
+      max-width: var(--main-content-width);
+    }
+  }
+}
+
+
 @include max-w($tab-q) {
   :root {
     --news-overlay-height: 7.625rem;
   }
   .main {
     &__body {
-      --main-content-width: 748px;
+      --main-content-width: 548px;
     }
   }
 }

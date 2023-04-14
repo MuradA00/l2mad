@@ -14,6 +14,11 @@
   --cont-p-x: 1rem;
   --cont-width: 100rem;
 
+  --header-padding: 0.75rem;
+  --header-logo-fz: clamp(1.5rem, 2vw, 2rem);
+  --nav-link-fz: clamp(1rem, 1.25vw, 1.25rem);
+  --nav-row-gutter: clamp(1.25rem, 3vw, 3rem);
+
   --home-gradient: radial-gradient(50% 50% at 50% 50%, #0E0D0D 0%, rgba(14, 13, 13, 0) 100%);
   --home-height: clamp(300px, 61.25vw, 980px);
   --home-spacing-y: clamp(80px, 16.125vw, 258px);
@@ -30,7 +35,7 @@
   --btn-p-y_large: clamp(1rem, 1.5vw, 1.5rem);
   --btn-p-x_large: clamp(1.375rem, 2vw, 2rem);
   --btn-p-y_small: 1rem;
-  --btn-p-x_small: clamp(1.25rem, 1.5vw, 1.5rem);
+  --btn-p-x_small: clamp(1.25rem, 1.4vw, 1.4rem);
   --btn-fz: clamp(1rem, 1.125vw, 1.125rem);
   --btn-fw: 600;
   --btn-fz_modal: 1rem;
@@ -43,7 +48,7 @@
   --cards-height: 27.75rem;
   --card-padding: clamp(1rem, 2vw, 32px);
 
-  --main-title-fz: clamp(1.625rem, 4.5vw, 4.5rem);
+  --main-title-fz: clamp(1.5rem, 4.5vw, 4.5rem);
   --main-title-lh: calc(80px / var(--main-title-fz));
   --main-title-fw: 400;
   --main-title-fz_medium: clamp(2.125rem, 4vw, 4rem);
@@ -62,10 +67,23 @@
   --footer-height: 5rem;
   --footer-fz: clamp(0.875rem, 1.125vw, 1.125rem);
   --footer-media-gutter: 0.875rem;
+
+  --modal-padding-x: clamp(1.25rem, 3vw, 3rem);
+  --modal-padding-y: clamp(2rem, 4vw, 64px);
+  --modal-overlay-bg: rgba(var(--b-clr), .7);
+  --modal-body-width: 64.625rem;
+  --modal-inner-gutter: clamp(2rem, 3vw, 3rem);
+  --modal-path-gutter: clamp(9px, 0.875vw, 0.875rem);
+  --modal-path-radius: 100px;
+
+  --menu-width: 20rem;
+  --menu-cont-p-x: 1rem;
+  --menu-cont-p-y: 3rem;
 }
 
 
 $tab-q: 75em;
-$mob-q: 34.375em,;
+$mob-q: 34.375em;
+$media-m: 40.625em;
 $sm-mob-q: 24.0625em;
 

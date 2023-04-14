@@ -1,0 +1,90 @@
+.menu {
+  position: fixed;
+
+  width: 100%;
+  height: 100%;
+  max-width: var(--menu-width);
+
+  top: 0;
+  right: 0;
+
+  background-color: rgba(var(--grey-clr),1);
+
+  border-left: 2px solid rgba(var(--w-clr),.1);
+
+  @include tr(300);
+  transition-delay: 300ms;
+
+  transform: translateX(100%);
+
+  @include z-4;
+  &__close {
+    & > svg {
+      fill: rgba(var(--w-clr),1);
+    }
+  }
+  &__body {
+    position: relative;
+  }
+  &__close {
+    position: absolute;
+
+    right: 0;
+    top: -2rem;
+  }
+  &__container {
+    height: 100%;
+
+    padding: var(--menu-cont-p-y) var(--menu-cont-p-x);
+  }
+  &__nav {
+    margin-bottom: 1rem;
+  }
+  &__nav-list {
+    @include fl(column, flex-start, 1rem);
+  }
+  &__nav-link {
+    text-transform: uppercase;
+
+    font-size: 1.25rem;
+  }
+  &__play-btn {
+    @extend
+    .button,
+    .button--small;
+  }
+  &__dropdown-current {
+    @include fl(row, center, 10px);
+  }
+  &__dropdown-hidden {
+    max-height: 0;
+    overflow: hidden;
+
+    @include tr(300);
+
+    padding-left: 1.25rem;
+
+    a {
+      font-size: 1.125rem;
+    }
+  }
+  &__play-btn {
+    display: none;
+  }
+}
+
+@include max-w($media-m) {
+  .menu {
+    &__play-btn {
+      display: flex;
+    }
+  }
+}
+
+.show-menu {
+  transform: translateX(0);
+}
+
+.collapse-menu-dropdown {
+  max-height: 6.25rem;
+}
