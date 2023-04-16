@@ -3,20 +3,10 @@
 
   background-size: cover;
   background-position: bottom;
+  background-image: url('../../img/promo/promo-bg.png');
 
   position: relative;
 
-  &::before {
-    @include pseudo;
-
-    width: 100%;
-    height: 100%;
-
-    top: 0;
-    left: 0;
-
-    background-color: rgba(var(--b-clr),.4);
-  }
   &::after {
     @include pseudo;
 
@@ -27,6 +17,13 @@
 
     top: 0;
     left: 0;
+  }
+  &__video-bg {
+    top: 0px !important;
+
+    video {
+      object-position: bottom;
+    }
   }
   &__body {
     padding-top: var(--promo-padding-y);

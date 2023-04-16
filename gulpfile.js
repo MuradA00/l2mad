@@ -73,7 +73,7 @@ gulp.task("refresh", (done) => {
 
 
 gulp.task("raster images", () => {
-  return gulp.src("build/img/*.{png,jpg,jpeg}")
+  return gulp.src("build/img/*.{png,jpg,jpeg,mp4,webm}")
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 2}),
       imagemin.mozjpeg({quality: 75, progressive: true})
@@ -82,7 +82,7 @@ gulp.task("raster images", () => {
 });
 
 gulp.task("webp", () => {
-  return gulp.src("build/**/*.{png,jpg,jpeg}")
+  return gulp.src("build/**/*.{png,jpg,jpeg,webm,mp4}")
     .pipe(webp({quality: 90}))
     .pipe(gulp.dest("build"));
 });
@@ -104,15 +104,6 @@ gulp.task("sprite", () => {
     .pipe(gulp.dest("build/img/sprite"));
 });
 
-// gulp.task("html", () => {
-//   return gulp.src("source/*.html")
-//     .pipe(posthtml([
-//       include()
-//     ]))
-//     // .pipe(htmlmin({ collapseWhitespace: true }))
-//     .pipe(gulp.dest("build"));
-// });
-
 gulp.task("html", () => {
   return gulp.src("source/*.html")
     .pipe(fileinclude())
@@ -128,7 +119,7 @@ gulp.task("html", () => {
 gulp.task("copy", () => {
   return gulp.src([
       "source/fonts/**/*.{woff,woff2}",
-      "source/img/**/*.{png,jpg,jpeg,svg,gif}",
+      "source/img/**/*.{png,jpg,jpeg,svg,gif,mp4,webm}",
       "source/*.ico"
     ], {
       base: "source"
