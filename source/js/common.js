@@ -9,6 +9,22 @@ const playBtns = document.querySelectorAll('#play-btn'),
       html = document.documentElement,
       menuDropdown = document.querySelector('.menu__dropdown-hidden'),
       menuDropdownTrigger = document.querySelector('.menu__nav-link--dropdown');
+      const cards = document.querySelectorAll('.news__card');
+
+cards.forEach(card => {
+  const currentInfoBlock = card.querySelector('.news__card-info');
+
+  const currentInfoTextHeight = currentInfoBlock.children[0].scrollHeight;
+
+  card.addEventListener('mouseenter', () => {
+    currentInfoBlock.style.height = `${currentInfoTextHeight}px`
+    currentInfoBlock.style.opacity = '100%';
+  })
+  card.addEventListener('mouseleave', () => {
+    currentInfoBlock.style.height = 0
+    currentInfoBlock.style.opacity = 0
+  })
+})
 
 menuDropdownTrigger.addEventListener('click', function(){
   this.classList.toggle('active-dropdown')

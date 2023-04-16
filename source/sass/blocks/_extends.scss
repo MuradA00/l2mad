@@ -63,6 +63,8 @@
   @include hover {
     &:hover {
       border: var(--btn-border-width) solid rgba(var(--w-clr), .8);
+
+      transform: scale(1.045);
     }
   }
   &:active {
