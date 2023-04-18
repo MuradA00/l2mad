@@ -1,89 +1,89 @@
 :root {
-  --ff_s: 'Segoe';
-  --ff_m: 'Montserrat', sans-serif;
-  --ff_r: 'Roboto', sans-serif;
-  --ff_i: 'Inter', sans-serif;
+  // --ff: 'Reaver';
+  --ff: 'Inter', sans-serif;
+  --ff_j: 'Jost', sans-serif;
 
   --w-clr: 255, 255, 255;
+  --w-clr_300: 226, 218, 206;
+  --gr-clr: 97, 97, 97;
   --b-clr: 0, 0, 0;
-  --r-clr: 219, 42, 17;
-  --grey-clr: 33, 36, 38;
-  --modal-bg: 24, 27, 29;
-  --body-bg: 2, 3, 9;
+  --dark-clr: 19, 23, 28;
+  --body-bg: 30, 30, 30;
+  --footer-links-heading-clr: 172, 172, 172;
 
+  --cont-width: 75rem;
   --cont-p-x: 1rem;
-  --cont-width: 100rem;
 
-  --header-padding: 0.75rem;
-  --header-logo-fz: clamp(1.5rem, 2vw, 2rem);
-  --nav-link-fz: clamp(1rem, 1.25vw, 1.25rem);
-  --nav-row-gutter: clamp(1.25rem, 3vw, 3rem);
+  --world-grid-gutter: 1rem;
+  --world-grid-cols: 1;
+  --world-item-height: 16.5rem;
+  --world-item-py: 1rem;
+  --world-item-px: 1.25rem;
+  --world-border-clr: 85, 85, 85;
+  --world-heading-shadow: 0rem 0rem 0.625rem rgba(var(--b-clr), 1);
+  --world-item-heading-fz: 1.25rem;
 
-  --home-gradient: radial-gradient(50% 50% at 50% 50%, #0E0D0D 0%, rgba(14, 13, 13, 0) 100%);
-  --home-height: clamp(300px, 61.25vw, 980px);
-  --home-spacing-y: clamp(120px, 16.125vw, 258px);
+  --promo-height: 37.5rem;
+  --promo-title-fz: 2.25rem;
+  --promo-title-span-fz: 1.875rem;
+  --promo-title-m: 2rem;
+  --promo-info-fz: 0.875rem;
+  --promo-section-mb: 68px;
 
-  --main-content-width: 75rem;
-  --main-info-width: 53.5rem;
-  --main-shadow-height: clamp(18.25rem, 40.25vw, 40.25rem);
-  --card-gradient: linear-gradient(to top, rgba(var(--b-clr), .8) 30%, transparent 60%);
-  --card-heading-width: 452px;
+  --footer-grid-cols: 2;
+  --footer-grid-gutter: 2.5rem;
+  --footer-logo-width: 7rem;
+  --footer-row-cols: 1;
+  --footer-row-gap: 4rem;
+  --footer-py-1: 2rem;
+  --footer-py-2: 1.25rem;
 
-  --news-overlay-bg: linear-gradient(180deg, rgba(var(--body-bg), 1) 0%, rgba(2, 4, 8, 0) 100%);
-  --news-overlay-height: 15.125rem;
-
-  --btn-p-y_large: clamp(1rem, 1.5vw, 1.5rem);
-  --btn-p-x_large: clamp(1.375rem, 2vw, 2rem);
-  --btn-p-y_small: 1rem;
-  --btn-p-x_small: clamp(1.25rem, 1.4vw, 1.4rem);
-  --btn-fz: clamp(1rem, 1.125vw, 1.125rem);
-  --btn-fw: 600;
-  --btn-fz_modal: 1rem;
-  --btn-lh_modal: calc(1.5rem / var(--btn-fz_modal));
-  --btn-lh: calc(24px / var(--btn-fz));
-  --btn-border-width: 2px;
-  --btn-radius: 0.25rem;
-
-  --cards-gutter: 1.5rem;
-  --cards-height: 27.75rem;
-  --card-padding: clamp(1rem, 2vw, 32px);
-
-  --main-title-fz: clamp(1.5rem, 4.5vw, 4.5rem);
-  --main-title-lh: calc(80px / var(--main-title-fz));
-  --main-title-fw: 400;
-  --main-title-fz_medium: clamp(2.125rem, 4vw, 4rem);
-  --main-title-lh_medium: calc(60px / var(--main-title-fz_medium));
-
-  --section-title_fz: clamp(2rem, 2.5vw, 2.5rem);
-  --section-title_lh: calc(2.5rem / var(--section-title_fz));
-
-  --promo-section-height: clamp(20rem, 33vw, 33rem);
-  --promo-padding-y: clamp(3.25rem, 7.5vw, 7.5rem);
-  --promo-shadow-bg: linear-gradient(180deg, #020309 0%, rgba(var(--body-bg),0) 100%);
-
-  --promo-shadow-height: calc((272 / 528) * 100%);
-
-  --footer-info-gutter: clamp(3.75rem, 6.25vw, 6.25rem);
-  --footer-height: 5rem;
-  --footer-fz: clamp(0.875rem, 1.125vw, 1.125rem);
-  --footer-media-gutter: 0.875rem;
-
-  --modal-padding-x: clamp(1.25rem, 3vw, 3rem);
-  --modal-padding-y: clamp(2rem, 4vw, 64px);
-  --modal-overlay-bg: rgba(var(--b-clr), .7);
-  --modal-body-width: 64.625rem;
-  --modal-inner-gutter: clamp(2rem, 3vw, 3rem);
-  --modal-path-gutter: clamp(9px, 0.875vw, 0.875rem);
-  --modal-path-radius: 100px;
-
-  --menu-width: 20rem;
-  --menu-cont-p-x: 1rem;
-  --menu-cont-p-y: 3rem;
+  // gradients
+  --home-gradient: background: linear-gradient(180deg, rgba(var(--b-clr),1) 0%, rgba(var(--b-clr),1) 13.54%, rgba(var(--b-clr),1) 51.04%, rgba(var(--b-clr),1) 83.33%, rgba(var(--b-clr),1) 100%);
+  --world-item-gradient: linear-gradient(180deg, rgba(var(--dark-clr), 0) 60%, rgba(var(--dark-clr), 0.733) 70%, rgba(var(--dark-clr), 1) 90%);
+  --world-item-hidden-gradient: linear-gradient(180deg, rgba(var(--dark-clr), 0.733) 0%, rgba(var(--b-clr),1) 90%);
 }
 
-
+$desk-q: 85.375em;
 $tab-q: 75em;
-$mob-q: 34.375em;
+$mob-q: 40em;
 $media-m: 40.625em;
 $sm-mob-q: 24.0625em;
 
+@include min-w($mob-q) {
+  :root {
+    --world-grid-cols: 2;
+
+    --promo-section-mb: 9.125rem;
+    --promo-title-fz: 3.375rem;
+    --promo-title-span-fz: 2.625rem;
+    --promo-title-m: 3.25rem;
+    --promo-info-fz: 1.25rem;
+
+    --footer-logo-width: 10rem;
+    --footer-py-1: 2.75rem;
+    --footer-row-cols: 3;
+  }
+}
+
+@include min-w($tab-q) {
+  :root {
+    --world-grid-gutter: 1.875rem;
+    --world-item-py: 1.875rem;
+    --world-item-px: 1.25rem;
+    --world-item-heading-fz: 1.5rem;
+    --world-grid-cols: 3;
+
+    --promo-height: 57.75rem;
+    --promo-title-fz: 4.5rem;
+    --promo-title-span-fz: 3.25rem;
+    --promo-info-fz: 1.625rem;
+  }
+}
+
+@include min-w($desk-q) {
+  :root {
+    --footer-row-cols: 3;
+    --footer-row-gap: 80px;
+  }
+}

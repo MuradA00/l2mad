@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   color: rgba(var(--w-clr),1);
-  background-color: rgba(var(--body-bg),1);
+  background-color: rgba(var(--b-clr),1);
   width: 100%;
   position: relative;
   font-family: inherit;
@@ -48,20 +48,12 @@ body {
 html {
   box-sizing: border-box;
   width: 100%;
-  font-family: var(--ff_i);
+  font-family: var(--ff);
   font-weight: 400;
   font-size: 16px;
   line-height: normal;
   min-height: 100vh;
   min-height: -webkit-fill-available;
-}
-
-main {
-  flex: 1;
-
-  & > *:last-child {
-    padding-bottom: calc(var(--footer-height) * 1.5);
-  }
 }
 
 *,

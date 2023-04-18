@@ -1,5 +1,4 @@
-const playBtns = document.querySelectorAll('#play-btn'),
-      modal = document.querySelector('.modal'),
+const cards = document.querySelectorAll('.world__grid-item'),
       body = document.body,
       modalCloseBtn = document.querySelector('.modal__close');
       closeIcon = document.querySelector('.menu__close'),
@@ -9,15 +8,14 @@ const playBtns = document.querySelectorAll('#play-btn'),
       html = document.documentElement,
       menuDropdown = document.querySelector('.menu__dropdown-hidden'),
       menuDropdownTrigger = document.querySelector('.menu__nav-link--dropdown');
-      const cards = document.querySelectorAll('.news__card');
 
 cards.forEach(card => {
-  const currentInfoBlock = card.querySelector('.news__card-info');
+  const currentInfoBlock = card.querySelector('.world__item-descr');
 
-  const currentInfoTextHeight = currentInfoBlock.children[0].scrollHeight;
+  const currentInfoTextHeight = currentInfoBlock.children[0].clientHeight
 
   card.addEventListener('mouseenter', () => {
-    currentInfoBlock.style.height = `${currentInfoTextHeight}px`
+    currentInfoBlock.style.height = `calc(${currentInfoTextHeight}px + 6px)`
     currentInfoBlock.style.opacity = '100%';
   })
   card.addEventListener('mouseleave', () => {
@@ -72,21 +70,3 @@ if (burger) {
   burger.addEventListener('click', showMenu);
 }
 
-
- function showModal(modal) {
-  modal.classList.add('show-modal')
-  body.style.overflow = 'hidden';
- }
-
- function hideModal(modal) {
-  modal.classList.remove('show-modal');
-  body.style.overflow = '';
- }
-
-playBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    showModal(modal);
-  })
-})
-
-modalCloseBtn.addEventListener('click', () => hideModal(modal));

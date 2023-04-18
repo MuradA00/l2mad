@@ -1,55 +1,48 @@
 .promo {
-  min-height: var(--promo-section-height);
+  min-height: var(--promo-height);
 
   background-size: cover;
-  background-position: bottom;
-  background-image: url('../../img/promo/promo-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
 
-  position: relative;
+  display: grid;
+  place-items: flex-end;
 
-  &::after {
-    @include pseudo;
-
-    width: 100%;
-    height: var(--promo-shadow-height);
-
-    background-image: var(--promo-shadow-bg);
-
-    top: 0;
-    left: 0;
-  }
-  &__video-bg {
-    top: 0px !important;
-
-    video {
-      object-position: bottom;
-    }
-  }
+  margin-bottom: var(--promo-section-mb);
   &__body {
-    padding-top: var(--promo-padding-y);
+    text-align: center;
 
-    position: relative;
-    @include z-1;
+    letter-spacing: 0.125rem;
   }
   &__title {
-    @extend
-    .main-title,
-    .main-title--medium;
+    font-size: var(--promo-title-fz);
 
-    @include m(b, 2rem);
+    text-transform: uppercase;
+
+    color: rgba(var(--w-clr_300), 1);
+
+    @include m(b, var(--promo-title-m));
+    & > span {
+      display: block;
+
+      font-size: var(--promo-title-span-fz);
+
+      color: rgba(var(--w-clr_300), .56);
+    }
   }
-  &__play {
-    @extend
-    .button;
+  &__info {
+    p {
+      color: rgba(var(--w-clr_300),1);
 
-    margin: 0 auto;
+      font-size: var(--promo-info-fz);
+
+      line-height: 146%;
+    }
   }
 }
 
-@include max-w($tab-q) {
+@include min-w($desk-q) {
   .promo {
-    &__title {
-      margin-bottom: 1rem;
-    }
+    background-position: top left;
   }
 }

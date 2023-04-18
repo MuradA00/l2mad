@@ -1,0 +1,147 @@
+.world {
+  &__title {
+    margin-bottom: 1.5rem;
+
+    font-weight: 600;
+    font-size: 1.125rem;
+
+    letter-spacing: 0.125em;
+
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--world-grid-cols), 1fr);
+
+    grid-gap: var(--world-grid-gutter);
+  }
+  &__grid-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: var(--world-item-height);
+
+    position: relative;
+
+    border-bottom: 1px solid rgba(var(--world-border-clr), 1);
+
+    overflow: hidden;
+    &::before,
+    &::after {
+      @include pseudo;
+
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      @include tr(300);
+      }
+      &::before {
+        background-image: var(--world-item-gradient);
+
+        top: 0;
+      }
+      &::after {
+        opacity: 0;
+
+        height: 0;
+
+        bottom: 0;
+
+        background-image: var(--world-item-hidden-gradient);
+
+        transition-delay: 150ms;
+      }
+      @include hover {
+        &:hover {
+          &::before {
+            opacity: 0;
+          }
+          &::after {
+            height: 100%;
+
+            opacity: 1;
+          }
+        }
+      }
+  }
+  &__grid-link {
+    width: 100%;
+    height: 100%;
+
+    padding: var(--world-item-py) var(--world-item-px);
+
+    position: relative;
+    @include z-1;
+
+    display: grid;
+    place-items: flex-end;
+  }
+  &__item-date {
+    color: rgba(var(--w-clr), .7);
+
+    font-size: 0.9375rem;
+    font-family: var(--ff_j);
+
+    text-transform: uppercase;
+
+    @include m(b, 0.125rem);
+
+    letter-spacing: 0.0625em;
+  }
+  &__item-heading {
+    font-weight: 700;
+
+    font-size: var(--world-item-heading-fz);
+
+    text-shadow: var(--world-heading-shadow);
+  }
+  &__item-descr {
+    height: 0;
+
+    opacity: 0;
+
+    @include tr(400);
+
+    p {
+      @include hide-text(5);
+
+      font-size: 1rem;
+    }
+  }
+}
+
+@include min-w($mob-q) {
+  .world {
+    &__item-descr {
+      p {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}
+
+@include max-w($tab-q) {
+  .world {
+    &__grid-item {
+      &::before {
+        opacity: 0;
+      }
+      &::after {
+        opacity: .6;
+
+        height: 100%;
+      }
+    }
+    &__item-descr {
+      height: 100% !important;
+
+      opacity: 1 !important;
+
+      p {
+        @include hide-text(3);
+      }
+    }
+  }
+}
