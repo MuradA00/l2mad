@@ -34,13 +34,13 @@
 
       width: 100%;
       height: 100%;
-
-      @include tr(300);
       }
       &::before {
         background-image: var(--world-item-gradient);
 
         top: 0;
+
+        @include tr(400);
       }
       &::after {
         opacity: 0;
@@ -51,6 +51,7 @@
 
         background-image: var(--world-item-hidden-gradient);
 
+        transition: 400ms ease;
         transition-delay: 150ms;
       }
       @include hover {
@@ -102,12 +103,13 @@
 
     opacity: 0;
 
-    @include tr(400);
+    transition: 400ms ease 75ms;
 
     p {
       @include hide-text(5);
 
       font-size: 1rem;
+      margin-top: 0.4375rem;
     }
   }
 }

@@ -117,3 +117,48 @@
 @mixin z-5 {
   z-index: 5;
 }
+
+@mixin btn($fz) {
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: var(--btn-py) var(--btn-px);
+
+  border-radius: 6px;
+
+  border: 3px solid rgba(var(--w-clr), .56);
+
+  @include tr(200);
+
+  @include hover {
+    &:hover {
+      transform: scale(1.025)
+      ;
+      border: 3px solid rgba(var(--w-clr), 1);
+    }
+  }
+
+  &:active {
+    transform: scale(.975);
+  }
+
+  span {
+    font-size: $fz;
+
+    letter-spacing: 0.125rem;
+
+    font-weight: 600;
+
+    color: rgba(var(--w-clr), 1);
+
+    text-transform: uppercase;
+  }
+}
+
+@mixin btn-flex($fz) {
+  @include fl(row, center, 1rem);
+
+  @include btn($fz);
+}

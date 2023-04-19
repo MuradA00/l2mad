@@ -31,12 +31,36 @@
     }
   }
   &__info {
+    margin-bottom: 2.75rem;
+
     p {
       color: rgba(var(--w-clr_300),1);
 
       font-size: var(--promo-info-fz);
 
       line-height: 146%;
+    }
+  }
+  &__play {
+    @include btn-flex(var(--btn-span-fz));
+
+    max-width: 15.625rem;
+
+    margin: 0 auto;
+
+    width: 100%;
+
+    padding: 1.375rem 1.875rem;
+    span {
+      line-height: 145%;
+    }
+  }
+}
+
+@include min-w($mob-q) {
+  .promo {
+    &__play {
+      max-width: 18.25rem;
     }
   }
 }

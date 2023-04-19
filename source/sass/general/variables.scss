@@ -2,6 +2,7 @@
   // --ff: 'Reaver';
   --ff: 'Inter', sans-serif;
   --ff_j: 'Jost', sans-serif;
+  --ff_ns: 'Noto-Sans', sans-serif;
 
   --w-clr: 255, 255, 255;
   --w-clr_300: 226, 218, 206;
@@ -9,10 +10,16 @@
   --b-clr: 0, 0, 0;
   --dark-clr: 19, 23, 28;
   --body-bg: 30, 30, 30;
+  --socials-svg-fill-clr: 218, 218, 218;
+  --back-icon-fill-clr: 74, 74, 74;
   --footer-links-heading-clr: 172, 172, 172;
 
   --cont-width: 75rem;
-  --cont-p-x: 1rem;
+  --cont-px: 1rem;
+
+  --home-p-top: 5.25rem;
+  --home-p-bottom: 6.75rem;
+  --quote-fz: 1.375rem;
 
   --world-grid-gutter: 1rem;
   --world-grid-cols: 1;
@@ -28,7 +35,7 @@
   --promo-title-span-fz: 1.875rem;
   --promo-title-m: 2rem;
   --promo-info-fz: 0.875rem;
-  --promo-section-mb: 68px;
+  --promo-section-mb: 3rem;
 
   --footer-grid-cols: 2;
   --footer-grid-gutter: 2.5rem;
@@ -37,6 +44,16 @@
   --footer-row-gap: 4rem;
   --footer-py-1: 2rem;
   --footer-py-2: 1.25rem;
+
+  --socials-grid-cols: 3;
+  --socials-grid-gap: 0.75rem;
+  --socials-svg-ratio: 1.625rem;
+  --socials-width: 6.375rem;
+  --socials-link-transition-property: cubic-bezier(.175,.885,.32,1.275);
+
+  --btn-py: 0.9375rem;
+  --btn-px: 1.875rem;
+  --btn-span-fz: 1.125rem;
 
   // gradients
   --home-gradient: background: linear-gradient(180deg, rgba(var(--b-clr),1) 0%, rgba(var(--b-clr),1) 13.54%, rgba(var(--b-clr),1) 51.04%, rgba(var(--b-clr),1) 83.33%, rgba(var(--b-clr),1) 100%);
@@ -63,11 +80,17 @@ $sm-mob-q: 24.0625em;
     --footer-logo-width: 10rem;
     --footer-py-1: 2.75rem;
     --footer-row-cols: 3;
+
+    --quote-fz: 2.25rem;
+
+    --btn-span-fz: 1.5rem;
   }
 }
 
 @include min-w($tab-q) {
   :root {
+    --quote-fz: 3.75rem;
+
     --world-grid-gutter: 1.875rem;
     --world-item-py: 1.875rem;
     --world-item-px: 1.25rem;
@@ -78,6 +101,9 @@ $sm-mob-q: 24.0625em;
     --promo-title-fz: 4.5rem;
     --promo-title-span-fz: 3.25rem;
     --promo-info-fz: 1.625rem;
+
+    --home-p-top: 14.25rem;
+    --home-p-bottom: 15.25rem;
   }
 }
 
