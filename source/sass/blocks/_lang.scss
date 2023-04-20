@@ -1,0 +1,90 @@
+.lang {
+  position: relative;
+
+  &:hover {
+     .lang {
+      &__hidden {
+        opacity: 1;
+
+        transform: translateY(0);
+
+        visibility: visible;
+
+        pointer-events: all;
+      }
+      &__arrow {
+        transform: scaleY(-1);
+      }
+     }
+  }
+  &__select {
+    @include fl(row, center, 8px);
+
+    cursor: pointer;
+
+    span {
+      color: rgba(var(--w-clr), .56);
+
+      text-transform: uppercase;
+
+      font-family: var(--ff_ns);
+      font-size: 0.6875rem;
+
+      letter-spacing: 0.125rem;
+    }
+  }
+  &__hidden {
+    position: absolute;
+
+    width: fit-content;
+
+    top: 0;
+    right: 0;
+
+    transform: translateY(0.625rem);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    @include tr(300);
+  }
+  &__list {
+    border: 2px solid rgba(var(--w-clr), .56);
+
+    margin-top: 1.5rem;
+
+    border-radius: 0.0625rem;
+  }
+  &__item {
+    cursor: pointer;
+
+    padding: 0.3125rem 0.75rem;
+
+    @include tr(300);
+
+    opacity: .56;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__arrow {
+    @include arrow(rgba(var(--w-clr), .56));
+
+    display: none;
+  }
+}
+
+@include min-w($mob-q) {
+  .lang {
+    &__select {
+      font-size: 0.8125rem;
+    }
+    &__arrow {
+      display: block;
+    }
+  }
+}

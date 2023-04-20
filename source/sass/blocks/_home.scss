@@ -2,7 +2,7 @@
   --btn-span-shadow:  0.125rem 0.125rem 0.1875rem  rgba(var(--b-clr),1);
   --btn-download-clr: 133, 133, 133;
   --title-shadow: 0rem 0rem 1.25rem rgba(var(--b-clr), 1);
-  --quote-author-fz: 1rem;
+  --quote-author-fz: 0.875rem;
   --play-btn-width: 18.75rem;
 
   background-size: 100% auto;
@@ -10,11 +10,29 @@
   background-repeat: no-repeat;
 
   padding-top: var(--home-p-top);
+
+  position: relative;
+
+  &::before {
+    @include pseudo;
+
+    width: 100%;
+    height: var(--header-gradient-height);
+
+    top: 0;
+    left: 0;
+
+    background-image: var(--header-gradient);
+  }
   &__container {
     --cont-width: 95.75rem;
   }
   &__body {
     padding-bottom: var(--home-p-bottom);
+
+    position: relative;
+
+    @include z-1;
   }
   &__quote-block {
     margin: 0 0 1.875rem;

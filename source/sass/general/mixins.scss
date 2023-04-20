@@ -162,3 +162,16 @@
 
   @include btn($fz);
 }
+
+@mixin arrow($bg) {
+  clip-path: var(--arrow-shape);
+
+  width: var(--arrow-width);
+  height: var(--arrow-height);
+
+  background-color: $bg;
+
+  @include tr(300);
+
+  display: block;
+}

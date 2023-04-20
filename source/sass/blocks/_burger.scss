@@ -1,0 +1,21 @@
+.burger {
+  display: grid;
+  grid-gap: 0.5rem;
+
+  span {
+    display: block;
+
+    background-color: rgba(var(--w-clr), 1);
+
+    width: 2rem;
+    height: 0.1875rem;
+
+    border-radius: 4px;
+  }
+}
+
+@include min-w($desk-q) {
+  .burger {
+    display: none;
+  }
+}

@@ -1,4 +1,23 @@
 .world {
+
+  position: relative;
+
+  &::before {
+    @include pseudo;
+
+    width: 100%;
+    height: 22.5rem;
+
+    top: 0;
+    left: 0;
+
+    background: var(--home-gradient);
+  }
+  &__body {
+    position: relative;
+
+    @include z-1;
+  }
   &__title {
     margin-bottom: 1.5rem;
 
@@ -144,6 +163,14 @@
       p {
         @include hide-text(3);
       }
+    }
+  }
+}
+
+@include min-w($desk-q) {
+  .world {
+    &::before {
+      height: 100%;
     }
   }
 }

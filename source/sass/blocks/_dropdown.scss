@@ -1,0 +1,36 @@
+.dropdown {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  @include tr(300);
+
+  opacity: 0;
+
+  transform: translateY(1rem);
+
+  visibility: hidden;
+
+  pointer-events: none;
+  &__list {
+    @include m(t, 1.75rem);
+
+    border: 2px solid rgba(var(--w-clr), .8);
+
+    border-radius: 2px;
+  }
+  &__item {
+    padding: 0.625rem;
+
+    @include tr(300);
+
+    @include hover {
+      &:hover {
+        transform: translateX(0.25rem);
+      }
+    }
+  }
+}

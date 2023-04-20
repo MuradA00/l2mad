@@ -3,11 +3,11 @@ const cards = document.querySelectorAll('.world__grid-item'),
       modalCloseBtn = document.querySelector('.modal__close');
       closeIcon = document.querySelector('.menu__close'),
       burger = document.querySelector('.burger'),
-      navLinks = document.querySelectorAll('.menu-nav__link'),
+      navLinks = document.querySelectorAll('.menu-nav__item a'),
       menu = document.querySelector('.menu'),
       html = document.documentElement,
-      menuDropdown = document.querySelector('.menu__dropdown-hidden'),
-      menuDropdownTrigger = document.querySelector('.menu__nav-link--dropdown');
+      menuDropdown = document.querySelector('.menu-nav__dropdown'),
+      menuDropdownTriggers = document.querySelectorAll('.menu-nav__link--dropdown');
 
 cards.forEach(card => {
   const currentInfoBlock = card.querySelector('.world__item-descr');
@@ -24,9 +24,20 @@ cards.forEach(card => {
   })
 })
 
-menuDropdownTrigger.addEventListener('click', function(){
-  this.classList.toggle('active-dropdown')
-  menuDropdown.classList.toggle('collapse-menu-dropdown')
+menuDropdownTriggers.forEach(tirgger => {
+  tirgger.addEventListener('click', function() {
+    this.classList.toggle('active-dropdown')
+    const hiddenDropdownBlock = this.querySelector('.menu-nav__dropdown');
+    const hiddenDropdownLinkHeight = hiddenDropdownBlock.children[0].clientHeight;
+
+    if (this.classList.contains('active-dropdown')) {
+      hiddenDropdownBlock.style.maxHeight = `${hiddenDropdownLinkHeight}px`
+      hiddenDropdownBlock.style.opacity = 1
+    } else {
+      hiddenDropdownBlock.style.maxHeight = 0
+      hiddenDropdownBlock.style.opacity = 0
+    }
+  })
 })
 
 function closeMenuByClick() {
@@ -47,6 +58,10 @@ function showMenu() {
     menu.classList.add('show-menu')
     body.classList.add('body-locked')
     html.classList.add('body-locked')
+
+    setTimeout(() => {
+      menu.classList.add('show-links')
+    }, 500)
   } else {
     menu.classList.remove('show-menu')
     body.classList.remove('body-locked')
@@ -60,6 +75,7 @@ function closeMenu() {
   burger.classList.remove('active-burger');
   body.classList.remove('body-locked')
   html.classList.remove('body-locked');
+  menu.classList.remove('show-links');
 }
 
 if (burger) {
