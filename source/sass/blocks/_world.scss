@@ -2,17 +2,7 @@
 
   position: relative;
 
-  &::before {
-    @include pseudo;
-
-    width: 100%;
-    height: 22.5rem;
-
-    top: 0;
-    left: 0;
-
-    background: var(--home-gradient);
-  }
+  background-color: rgba(var(--b-clr), 1);
   &__body {
     position: relative;
 
@@ -40,9 +30,13 @@
 
     min-height: var(--world-item-height);
 
+    @include tr(200);
+
+    will-change: transform;
+
     position: relative;
 
-    border-bottom: 1px solid rgba(var(--world-border-clr), 1);
+    border-bottom: 2px solid rgba(var(--world-border-clr), 1);
 
     overflow: hidden;
     &::before,
@@ -64,8 +58,6 @@
       &::after {
         opacity: 0;
 
-        height: 0;
-
         bottom: 0;
 
         background-image: var(--world-item-hidden-gradient);
@@ -75,6 +67,7 @@
       }
       @include hover {
         &:hover {
+          transform: scale(1.015);
           &::before {
             opacity: 0;
           }

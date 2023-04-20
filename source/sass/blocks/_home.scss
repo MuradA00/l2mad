@@ -5,6 +5,7 @@
   --quote-author-fz: 0.875rem;
   --play-btn-width: 18.75rem;
 
+  background-image: url(../../img/home/bg-home.png);
   background-size: 100% auto;
   background-position: top left;
   background-repeat: no-repeat;
@@ -13,6 +14,40 @@
 
   position: relative;
 
+  &::after {
+    display: none;
+
+    @include pseudo;
+
+    width: 100%;
+    height: 25%;
+
+    bottom: -15%;
+    left: 0;
+
+    background: var(--home-gradient);
+  }
+
+  &__video {
+    display: none;
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+    video {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      max-width: 100vw;
+    }
+  }
   &::before {
     @include pseudo;
 
@@ -95,6 +130,12 @@
     --quote-author-fz: 1.125rem;
     --play-btn-width: 22.75rem;
 
+    &::after {
+      display: block;
+    }
+    &__video {
+      display: block;
+    }
     &__play {
       span {
         font-size: 1.375rem;
