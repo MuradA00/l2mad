@@ -6,3 +6,24 @@
 
 // Noto FONT
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans:regular,600);
+
+@font-face {
+  font-family: 'Reaver';
+  src: local('ReaveR'),
+  url('../../fonts/Reaver-Bold.woff') format('woff'),
+  url('../../fonts/Reaver-Bold.otf') format('opentype'),
+  url('../../fonts/Reaver-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Reaver';
+  src: url('../../fonts/Reaver-SemiBold.woff'),
+  url('../../fonts/Reaver-SemiBold.ttf') format('truetype'),
+  url('../../fonts/Reaver-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}

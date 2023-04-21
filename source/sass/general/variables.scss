@@ -1,7 +1,7 @@
 :root {
-  // --ff: 'Reaver';
-  --ff: 'Inter', sans-serif;
+  --ff: 'Reaver';
   --ff_j: 'Jost', sans-serif;
+  --ff_i: 'Inter', sans-serif;
   --ff_ns: 'Noto-Sans', sans-serif;
 
   --w-clr: 255, 255, 255;
@@ -18,7 +18,7 @@
   --cont-px: 0.75rem;
 
   --header-gradient-height: 20.6875rem;
-  --header-logo-width: 7rem;
+--header-logo-width: 7rem;
   --header-py: 0.75rem;
   --nav-list-gap: 1.75rem;
   --nav-link-fz: 1rem;
@@ -81,7 +81,7 @@ $sm-mob-q: 24.0625em;
 
 @include min-w($sm-mob-q) {
   :root {
-    --quote-fz: 1.625rem;
+    --quote-fz: 1.5rem;
   }
 }
 
@@ -94,7 +94,7 @@ $sm-mob-q: 24.0625em;
     --promo-section-mb: 9.125rem;
     --promo-title-fz: 3.375rem;
     --promo-title-span-fz: 2.625rem;
-    --promo-title-m: 3.25rem;
+    --promo-title-m: 2.85rem;
     --promo-info-fz: 1.25rem;
 
     --footer-logo-width: 10rem;
