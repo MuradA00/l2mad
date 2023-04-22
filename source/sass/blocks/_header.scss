@@ -1,6 +1,6 @@
 .header {
   --cont-width: 113.875rem;
-  --header-play-width: 16.75rem;
+  --header-play-width: 16.125rem;
   --actions-gap: 0.75rem;
 
   position: absolute;
@@ -14,7 +14,7 @@
 
   @include z-3;
   &__navigation {
-    @include fl(row, center, 3.125rem);
+    @include fl(row, center, 2.5rem);
   }
   &__body {
     @include fl(row, center, 1rem);
@@ -30,9 +30,19 @@
   &__play {
     @include btn-flex(1.125rem);
 
+    padding: 0.9375rem;
+
     display: none;
 
     max-width: var(--header-play-width);
+
+    & > span {
+      max-width: 14.0625rem;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
   &__actions {
     @include fl(row, center, var(--actions-gap));
@@ -44,8 +54,8 @@
 
     letter-spacing: 0.125rem;
 
-    font-weight: 600;
-    font-family: var(--ff_ns);
+    font-weight: 400;
+    font-family: var(--ff_r);
 
     @include tr(300);
 
@@ -61,14 +71,14 @@
 @include min-w($mob-q) {
   .header {
     &__login {
-      font-size: 0.875rem;
+      font-size: 1rem;
     }
   }
 }
 
 @include min-w($desk-q) {
   .header {
-    --actions-gap: 1.375rem;
+    --actions-gap: 1rem;
     &__play {
       display: flex;
     }

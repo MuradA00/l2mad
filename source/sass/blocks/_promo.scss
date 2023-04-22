@@ -1,4 +1,7 @@
 .promo {
+  &__container {
+    --cont-width: 69.875rem
+  }
   min-height: var(--promo-height);
 
   background-size: cover;
@@ -19,6 +22,8 @@
   }
   &__title {
     font-size: var(--promo-title-fz);
+
+    line-height: 110%;
 
     text-transform: uppercase;
 
@@ -47,11 +52,9 @@
   &__play {
     @include btn-flex(var(--btn-span-fz));
 
-    max-width: 15.625rem;
+    width: fit-content;
 
     margin: 0 auto;
-
-    width: 100%;
 
     padding: var(--promo-btn-py) var(--promo-btn-px);
     span {
@@ -64,13 +67,10 @@
   .promo {
     --promo-btn-py: 1.375rem;
     --promo-btn-px: 1.875rem;
-    &__play {
-      max-width: 18.25rem;
-    }
   }
 }
 
-@include min-w($desk-q) {
+@include min-w($desk-large-q) {
   .promo {
     background-position: top left;
   }

@@ -9,21 +9,45 @@
 
 @font-face {
   font-family: 'Reaver';
-  src: local('ReaveR'),
+  src: local('Reaver'),
   url('../../fonts/Reaver-Bold.woff') format('woff'),
+  url('../../fonts/Reaver-Bold.woff2') format('woff2'),
   url('../../fonts/Reaver-Bold.otf') format('opentype'),
   url('../../fonts/Reaver-Bold.ttf') format('truetype');
   font-weight: 700;
-  font-display: swap;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Reaver';
-  src: url('../../fonts/Reaver-SemiBold.woff'),
+  src: local('Reaver'),
+  url('../../fonts/Reaver-SemiBold.woff') format('woff'),
+  url('../../fonts/Reaver-Bold.woff2') format('woff2'),
   url('../../fonts/Reaver-SemiBold.ttf') format('truetype'),
   url('../../fonts/Reaver-SemiBold.otf') format('opentype');
   font-weight: 600;
-  font-display: swap;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Radiance';
+  src: local('Radiance'),
+  url('../../fonts/radiance-semibold.woff') format('woff'),
+  url('../../fonts/radiance-semibold.woff2') format('woff2'),
+  url('../../fonts/radiance-semibold.ttf') format('truetype'),
+  url('../../fonts/radiance-semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Radiance';
+  src: local('Radiance'),
+  url('../../fonts/radiance.woff') format('woff'),
+  url('../../fonts/radiance.woff2') format('woff2'),
+  url('../../fonts/radiance.ttf') format('truetype'),
+  url('../../fonts/radiance.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+

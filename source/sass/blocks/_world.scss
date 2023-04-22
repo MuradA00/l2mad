@@ -1,8 +1,7 @@
 .world {
+  --world-py: 2rem;
 
   position: relative;
-
-  background-color: rgba(var(--b-clr), 1);
   &__body {
     position: relative;
 
@@ -12,9 +11,10 @@
     margin-bottom: 1.5rem;
 
     font-weight: 600;
-    font-size: 1.125rem;
+    font-size: 1rem;
+    font-family: var(--ff_ns);
 
-    letter-spacing: 0.125em;
+    letter-spacing: 0.1875rem;
     text-transform: uppercase;
   }
   &__grid {
@@ -83,7 +83,7 @@
     width: 100%;
     height: 100%;
 
-    padding: var(--world-item-py) var(--world-item-px);
+    padding: var(--world-item-py) var(--world-item-px) 1rem var(--world-item-px);
 
     position: relative;
     @include z-1;
@@ -118,10 +118,12 @@
     transition: 400ms ease 75ms;
 
     p {
-      @include hide-text(5);
+      @include hide-text(4);
 
       font-size: 1rem;
       margin-top: 0.4375rem;
+
+      color: rgba(var(--w-clr), .7);
     }
   }
 }
@@ -130,7 +132,7 @@
   .world {
     &__item-descr {
       p {
-        font-size: 1.125rem;
+        font-size: 1rem;
       }
     }
   }

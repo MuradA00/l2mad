@@ -1,5 +1,6 @@
 :root {
   --ff: 'Reaver';
+  --ff_r: 'Radiance';
   --ff_j: 'Jost', sans-serif;
   --ff_i: 'Inter', sans-serif;
   --ff_ns: 'Noto-Sans', sans-serif;
@@ -9,16 +10,21 @@
   --gr-clr: 97, 97, 97;
   --b-clr: 0, 0, 0;
   --dark-clr: 19, 23, 28;
+  --r-clr: 219, 42, 17;
+  --grey-clr: 33, 36, 38;
+  --modal-bg: 24, 27, 29;
   --body-bg: 30, 30, 30;
   --socials-svg-fill-clr: 218, 218, 218;
   --back-icon-fill-clr: 74, 74, 74;
   --footer-links-heading-clr: 172, 172, 172;
+  --lang-bg: 34, 34, 34;
+  --lang-link-clr: 153, 153, 153;
 
   --cont-width: 75rem;
   --cont-px: 0.75rem;
 
   --header-gradient-height: 20.6875rem;
---header-logo-width: 7rem;
+  --header-logo-width: 7rem;
   --header-py: 0.75rem;
   --nav-list-gap: 1.75rem;
   --nav-link-fz: 1rem;
@@ -29,7 +35,7 @@
 
   --world-grid-gutter: 1rem;
   --world-grid-cols: 1;
-  --world-item-height: 16.5rem;
+  --world-item-height: 14.625rem;
   --world-item-py: 1rem;
   --world-item-px: 1.25rem;
   --world-border-clr: 85, 85, 85;
@@ -42,6 +48,9 @@
   --promo-title-m: 2rem;
   --promo-info-fz: 0.875rem;
   --promo-section-mb: 3rem;
+
+  --lang-width: 14.625rem;
+  --lang-py: 0.75rem;
 
   --footer-grid-cols: 2;
   --footer-grid-gutter: 2.5rem;
@@ -60,20 +69,40 @@
   --btn-py: 0.875rem;
   --btn-px: 1.25rem;
   --btn-span-fz: 1.125rem;
+  --btn-p-y_large: clamp(1rem, 1.5vw, 1.5rem);
+  --btn-p-x_large: clamp(1.375rem, 2vw, 2rem);
+  --btn-p-y_small: 1rem;
+  --btn-p-x_small: clamp(1.25rem, 1.4vw, 1.4rem);
+  --btn-fz: clamp(1rem, 1.125vw, 1.125rem);
+  --btn-fw: 600;
+  --btn-fz_modal: 1rem;
+  --btn-lh_modal: calc(1.5rem / var(--btn-fz_modal));
+  --btn-lh: calc(24px / var(--btn-fz));
+  --btn-border-width: 2px;
+  --btn-radius: 0.25rem;
 
   --arrow-shape: polygon(50% 100%, 0 0, 100% 0);
   --arrow-width: 0.625rem;
   --arrow-height: 0.375rem;
 
+  --modal-padding-x: clamp(1.25rem, 3vw, 3rem);
+  --modal-padding-y: clamp(2rem, 4vw, 64px);
+  --modal-overlay-bg: rgba(var(--b-clr), .7);
+  --modal-body-width: 64.625rem;
+  --modal-inner-gutter: clamp(2rem, 3vw, 3rem);
+  --modal-path-gutter: clamp(9px, 0.875vw, 0.875rem);
+  --modal-path-radius: 100px;
+
   // gradients
   --header-gradient: linear-gradient(180deg, rgba(18, 28, 35, 0.8) 0%, rgba(var(--b-clr), 0) 100%);
+  --home-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 13.54%, #000000 51.04%, #000000 83.33%, rgba(0, 0, 0, 0) 100%);
 
-  --home-gradient: linear-gradient(180deg, rgba(var(--b-clr),0) 0%, rgba(var(--b-clr),1) 13.54%, rgba(var(--b-clr),1) 51.04%, rgba(var(--b-clr),1) 83.33%, rgba(var(--b-clr),1) 100%);
-  --world-item-gradient: linear-gradient(180deg, rgba(var(--dark-clr), 0) 60%, rgba(var(--dark-clr), 0.733) 70%, rgba(var(--dark-clr), 0) 90%);
+  --world-item-gradient: linear-gradient(180deg, rgba(19, 23, 28, 0) 60%, rgba(19, 23, 28, 0.733) 70%, #13171C 90%);
   --world-item-hidden-gradient: linear-gradient(180deg, rgba(var(--dark-clr), 0.733) 0%, rgba(var(--b-clr),1) 90%);
 }
 
 $desk-q: 85.375em;
+$desk-large-q: 120em;
 $tab-q: 75em;
 $mob-q: 40em;
 $media-m: 40.625em;
@@ -94,7 +123,7 @@ $sm-mob-q: 24.0625em;
     --promo-section-mb: 9.125rem;
     --promo-title-fz: 3.375rem;
     --promo-title-span-fz: 2.625rem;
-    --promo-title-m: 2.85rem;
+    --promo-title-m: 2rem;
     --promo-info-fz: 1.25rem;
 
     --footer-logo-width: 10rem;
@@ -113,11 +142,7 @@ $sm-mob-q: 24.0625em;
   :root {
     --header-logo-width: 10rem;
     --nav-list-gap: 2.5rem;
-    --nav-link-fz: 1.125rem;
 
-    --quote-fz: 3.75rem;
-
-    --world-grid-gutter: 1.875rem;
     --world-item-py: 1.875rem;
     --world-item-px: 1.25rem;
     --world-item-heading-fz: 1.5rem;
@@ -128,8 +153,8 @@ $sm-mob-q: 24.0625em;
     --promo-title-span-fz: 3.25rem;
     --promo-info-fz: 1.625rem;
 
-    --home-p-top: 14.25rem;
-    --home-p-bottom: 15.25rem;
+    --home-p-top: 8.25rem;
+    --home-p-bottom: 6rem;
   }
 }
 
@@ -137,5 +162,23 @@ $sm-mob-q: 24.0625em;
   :root {
     --footer-row-cols: 3;
     --footer-row-gap: 80px;
+
+    --world-grid-gutter: 1.875rem;
+
+    --quote-fz: 3.75rem;
+
+    --lang-width: 18.875rem;
+  }
+}
+
+@include min-w(85.375em) {
+  :root {
+    --home-p-top: 7.75rem;
+  }
+}
+
+@include min-w(90em) {
+  :root {
+    --home-p-top: 11rem;
   }
 }

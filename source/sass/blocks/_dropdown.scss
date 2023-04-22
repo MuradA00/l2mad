@@ -16,14 +16,12 @@
 
   pointer-events: none;
   &__list {
-    @include m(t, 1.75rem);
+    @include m(t, 2rem);
 
     border: 2px solid rgba(var(--w-clr), .8);
-
-    border-radius: 2px;
   }
   &__item {
-    padding: 0.625rem;
+    padding: 0.375rem 0.625rem;
 
     @include tr(300);
 
@@ -32,5 +30,8 @@
         transform: translateX(0.25rem);
       }
     }
+  }
+  &__link {
+    font-size: 0.875rem;
   }
 }

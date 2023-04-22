@@ -1,5 +1,7 @@
 const cards = document.querySelectorAll('.world__grid-item'),
+      playBtns = document.querySelectorAll('#play-btn'),
       body = document.body,
+      modal = document.querySelector('.modal'),
       modalCloseBtn = document.querySelector('.modal__close');
       closeIcon = document.querySelector('.menu__close'),
       burger = document.querySelector('.burger'),
@@ -15,7 +17,7 @@ cards.forEach(card => {
   const currentInfoTextHeight = currentInfoBlock.children[0].clientHeight
 
   card.addEventListener('mouseenter', () => {
-    currentInfoBlock.style.height = `calc(${currentInfoTextHeight}px + 6px)`
+    currentInfoBlock.style.height = `calc(${currentInfoTextHeight}px + 0.75rem)`
     currentInfoBlock.style.opacity = '100%';
   })
   card.addEventListener('mouseleave', () => {
@@ -86,3 +88,20 @@ if (burger) {
   burger.addEventListener('click', showMenu);
 }
 
+function showModal(modal) {
+  modal.classList.add('show-modal')
+  body.style.overflow = 'hidden';
+ }
+
+ function hideModal(modal) {
+  modal.classList.remove('show-modal');
+  body.style.overflow = '';
+ }
+
+playBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    showModal(modal);
+  })
+})
+
+modalCloseBtn.addEventListener('click', () => hideModal(modal));

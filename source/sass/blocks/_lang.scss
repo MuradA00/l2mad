@@ -27,8 +27,8 @@
 
       text-transform: uppercase;
 
-      font-family: var(--ff_ns);
-      font-size: 0.6875rem;
+      font-family: var(--ff_r);
+      font-size: 14px;
 
       letter-spacing: 0.125rem;
     }
@@ -52,27 +52,49 @@
     @include tr(300);
   }
   &__list {
-    border: 2px solid rgba(var(--w-clr), .56);
+    border: 1px solid rgba(var(--w-clr), .56);
+
+    background-color: rgba(var(--lang-bg), 1);
+
+    width: var(--lang-width);
+
+    text-align: left;
 
     margin-top: 1.5rem;
 
     border-radius: 0.0625rem;
+
+    padding: var(--lang-py) 0;
   }
   &__item {
-    cursor: pointer;
+    display: block;
 
-    padding: 0.3125rem 0.75rem;
+    display: grid;
+    align-items: center;
+  }
+  &__link {
+    font-size: 0.625rem;
+    font-family: var(--ff_r);
+    font-weight: 400;
+
+    line-height: 1.125rem;
 
     @include tr(300);
 
-    opacity: .56;
+    color: rgba(var(--lang-link-clr), 1);
 
-    &:hover {
-      opacity: 1;
+    padding: 0 var(--lang-py);
+
+    @include hover {
+      &:hover {
+        color: rgba(var(--b-clr), 1);
+
+        background-color: rgba(var(--lang-link-clr), 1);
+      }
     }
   }
   &__arrow {
-    @include arrow(rgba(var(--w-clr), .56));
+    @include arrow(rgba(var(--w-clr), 1));
 
     display: none;
   }

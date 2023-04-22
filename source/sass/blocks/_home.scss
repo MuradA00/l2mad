@@ -13,21 +13,17 @@
   padding-top: var(--home-p-top);
 
   position: relative;
-
   &::after {
-    display: none;
-
     @include pseudo;
 
     width: 100%;
-    height: 25%;
+    height: 10rem;
 
-    bottom: -20%;
+    bottom: -7rem;
     left: 0;
 
     background: var(--home-gradient);
   }
-
   &__video {
     display: none;
 
@@ -94,10 +90,7 @@
   &__play {
     @include btn-flex(1rem);
 
-    max-width: var(--play-btn-width);
-
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    width: fit-content;
 
     span {
       text-shadow: var(--btn-span-shadow);
